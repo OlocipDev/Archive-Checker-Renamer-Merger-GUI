@@ -59,6 +59,23 @@ CORE FEATURES
    operating system Recycle Bin / Trash rather than permanent deletion 
    (os.remove), allowing safe recovery[cite: 1].
 
+5. Loose Images & CBZ Creation (CreateCbzWorker)
+ - Image Listing : Every loose image file (.jpg, .jpeg, .png, .webp, .bmp, 
+   .gif, .tif, .tiff, .avif) is displayed row by row with its own checkbox, 
+   ready to be selected[cite: 1].
+ - Create CBZ : Pack every folder of checked images into a single .cbz, created 
+   next to the source folder. Internal images are rewritten as a continuous 
+   sequence prefixed with the chosen prefix (e.g. 0001.jpg, 0002.jpg)[cite: 1].
+ - Out-of-Sequence Detection : Images whose name has no number or falls outside 
+   the folder's main sequence (e.g. a stray logo) are highlighted in red as 
+   "OUT OF SEQUENCE" so they can be excluded[cite: 1].
+
+6. Automatic Prefix (detect_prefix / PrefixWorker)
+ - Smart Detection : The prefix defaults to the name of the folder dropped / 
+   opened by the user, and can be freely edited in the dedicated field[cite: 1].
+ - Apply Prefix : Applies the prefix to the archive name AND its internal files, 
+   with a non-destructive, idempotent rename[cite: 1].
+
 UI & USABILITY HIGHLIGHTS (ArchiveCheckerApp)
 --------------------------------------------
  - Drag & Drop : Directly drop folders onto the window to begin scanning[cite: 1].
@@ -67,6 +84,8 @@ UI & USABILITY HIGHLIGHTS (ArchiveCheckerApp)
  - Natural Sorting & Filtering : Full natural sort across columns 
    (NaturalSortTableWidgetItem: 1, 2, ..., 10 instead of 1, 10, 2) and instant 
    live filtering[cite: 1].
+ - Range Selection : Click a checkbox, then Shift+Click another to select the 
+   whole range[cite: 1].
  - Live Language Switch (FR / EN) : Instant UI localization via the 
    TRANSLATIONS dictionary[cite: 1].
  - Standalone Build Support : Includes sys._MEIPASS path handling for smooth 
@@ -74,7 +93,7 @@ UI & USABILITY HIGHLIGHTS (ArchiveCheckerApp)
 
 BUILD (WINDOWS .EXE)
 --------------------
-pyinstaller --noconsole --onefile --clean archive-checker-merger-gui.py
+pyinstaller --noconsole --onefile --clean archive-checker-renamer-merger-gui.py
 
 
 
@@ -141,6 +160,23 @@ FONCTIONNALITES PRINCIPALES
    (Windows/Linux) pour permettre une recuperation au lieu d'une suppression 
    definitive[cite: 1].
 
+5. Images libres & Creation de CBZ (CreateCbzWorker)
+ - Liste des images : Chaque fichier image libre (.jpg, .jpeg, .png, .webp, 
+   .bmp, .gif, .tif, .tiff, .avif) est affiche ligne par ligne avec sa propre 
+   case a cocher, pret a etre selectionne[cite: 1].
+ - Creer CBZ : Regroupe chaque dossier d'images cochees dans un unique .cbz, 
+   cree a cote du dossier source. Les images internes sont reecrites en suite 
+   continue prefixee (ex: 0001.jpg, 0002.jpg)[cite: 1].
+ - Detection hors sequence : Les images dont le nom n'a pas de numero ou sort de 
+   la sequence principale du dossier (ex: un logo parasite) sont surlignees en 
+   rouge "HORS SEQUENCE" afin de pouvoir les exclure[cite: 1].
+
+6. Prefixe automatique (detect_prefix / PrefixWorker)
+ - Detection intelligente : Le prefixe reprend par defaut le nom du dossier 
+   depose / ouvert par l'utilisateur, et reste modifiable dans le champ dedie[cite: 1].
+ - Appliquer prefixe : Applique le prefixe au nom de l'archive ET a ses fichiers 
+   internes, via un renommage non destructif et idempotent[cite: 1].
+
 ERGONOMIE & INTERFACE GRAPHIQUE (ArchiveCheckerApp)
 --------------------------------------------------
  - Glisser-Deposer (Drag & Drop) : Support du depot direct de dossiers sur la 
@@ -150,6 +186,8 @@ ERGONOMIE & INTERFACE GRAPHIQUE (ArchiveCheckerApp)
  - Tri naturel & Filtrage : Tri numerique et naturel reel sur toutes les 
    colonnes (NaturalSortTableWidgetItem : 1, 2, ..., 10 au lieu de 1, 10, 2) 
    et champ de recherche/filtrage en temps reel[cite: 1].
+ - Selection par plage : Cochez une case puis Shift+Clic sur une autre pour 
+   selectionner toute la plage[cite: 1].
  - Internationalisation dynamique (FR / EN) : Bascule instantanee de la 
    totalite des libelles et messages de l'interface via le dictionnaire 
    TRANSLATIONS[cite: 1].
@@ -158,7 +196,7 @@ ERGONOMIE & INTERFACE GRAPHIQUE (ArchiveCheckerApp)
 
 COMPILATION (WINDOWS .EXE)
 --------------------------
-pyinstaller --noconsole --onefile --clean archive-checker-merger-gui.py
+pyinstaller --noconsole --onefile --clean archive-checker-renamer-merger-gui.py
 
 ---
 
